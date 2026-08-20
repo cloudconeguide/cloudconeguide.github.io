@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="zh-CN" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.2.2"><title>CloudCone SSH 连不上怎么办？一篇讲清排查全流程 - CloudCone 指南</title><meta name="description" content="CloudCone VPS 买完 SSH 连接超时、拒绝连接或晚高峰频繁断线？按机器状态、本地线路、SSH 服务、认证到 IP 被墙逐层排查，附错误信息对照表、常用命令输出示例、Windows/Mac 客户端用法与平替方案。"><link rel="canonical" href="https://cloudconeguide.github.io/blog/cloudcone-ssh-troubleshooting"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="CloudCone 指南"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="CloudCone SSH 连不上怎么办？一篇讲清排查全流程 - CloudCone 指南"><meta property="og:description" content="CloudCone VPS 买完 SSH 连接超时、拒绝连接或晚高峰频繁断线？按机器状态、本地线路、SSH 服务、认证到 IP 被墙逐层排查，附错误信息对照表、常用命令输出示例、Windows/Mac 客户端用法与平替方案。"><meta property="og:url" content="https://cloudconeguide.github.io/blog/cloudcone-ssh-troubleshooting"><meta property="og:image" content="https://cloudconeguide.github.io/og-default.svg"><meta property="article:published_time" content="2026-08-17T00:00:00.000Z"><meta property="article:modified_time" content="2026-08-17T00:00:00.000Z"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CloudCone SSH 连不上怎么办？一篇讲清排查全流程 - CloudCone 指南"><meta name="twitter:description" content="CloudCone VPS 买完 SSH 连接超时、拒绝连接或晚高峰频繁断线？按机器状态、本地线路、SSH 服务、认证到 IP 被墙逐层排查，附错误信息对照表、常用命令输出示例、Windows/Mac 客户端用法与平替方案。"><meta name="twitter:image" content="https://cloudconeguide.github.io/og-default.svg"><!-- 结构化数据 --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://cloudconeguide.github.io/#website","url":"https://cloudconeguide.github.io/","name":"CloudCone 指南与真实评测","description":"CloudCone 历史套餐大全、最新优惠活动及深度替代评测指南。","inLanguage":"zh-CN"},{"@type":"Organization","@id":"https://cloudconeguide.github.io/#organization","name":"CloudCone 指南","url":"https://cloudconeguide.github.io/","logo":"https://cloudconeguide.github.io/og-default.svg"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CloudCone SSH 连不上怎么办？一篇讲清排查全流程","description":"CloudCone VPS 买完 SSH 连接超时、拒绝连接或晚高峰频繁断线？按机器状态、本地线路、SSH 服务、认证到 IP 被墙逐层排查，附错误信息对照表、常用命令输出示例、Windows/Mac 客户端用法与平替方案。","datePublished":"2026-08-17T00:00:00.000Z","dateModified":"2026-08-17T00:00:00.000Z","author":{"@type":"Person","name":"Leo"},"publisher":{"@type":"Organization","name":"CloudCone 指南","logo":{"@type":"ImageObject","url":"https://cloudconeguide.github.io/og-default.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cloudconeguide.github.io/blog/cloudcone-ssh-troubleshooting"},"inLanguage":"zh-CN"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://cloudconeguide.github.io/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://cloudconeguide.github.io/blog"},{"@type":"ListItem","position":3,"name":"CloudCone SSH 连不上怎么办？一篇讲清排查全流程","item":"https://cloudconeguide.github.io/blog/cloudcone-ssh-troubleshooting"}]}</script><link rel="stylesheet" href="/_astro/Layout.CIcewFPN.css"></head><body class="min-h-screen flex flex-col"><header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/70"><div class="shell h-16 flex items-center justify-between"><a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><nav class="hidden sm:flex items-center gap-1"><a href="/" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">首页</a><a href="/plans" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">所有套餐</a><a href="/events" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">历史活动</a><a href="/blog" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">博客</a></nav></div></header><main class="flex-grow"><article class="max-w-3xl mx-auto px-4 sm:px-6 py-16"><a href="/blog" class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors mb-8"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>返回博客</a><header class="mb-10"><div class="flex items-center gap-3 text-sm text-slate-400 mb-4"><span>2026年8月16日</span><span class="w-1 h-1 rounded-full bg-slate-300"></span><span>Leo</span></div><h1 class="text-4xl font-extrabold text-slate-900 leading-tight">CloudCone SSH 连不上怎么办？一篇讲清排查全流程</h1></header><div class="prose prose-slate prose-primary lg:prose-lg max-w-none prose-a:text-primary-600 prose-a:no-underline [&amp;_a:hover]:underline [&amp;_a:hover]:text-primary-700 border-t border-slate-200 pt-10"><p>经常有网友反馈：CloudCone 的机器买完之后 <strong>SSH 连不上</strong>，或者白天好好的、一到<strong>晚高峰就频繁断线</strong>。这类问题原因五花八门——可能是机器本身、你的本地网络、SSH 配置，也可能是 IP 被墙。下面按「从易到难、从外到内」的顺序排查，照着走一遍基本都能定位。</p>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">先记住一个判断原则</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><p>先分清是**「完全连不上」<strong>还是</strong>「时好时坏 / 晚高峰断」**：前者多半是机器或配置问题，后者几乎都是线路问题。对症下药能省很多时间。</p></div></div></div>
+<h2 id="先对号入座错误信息对照表">先对号入座：错误信息对照表</h2>
+<p>不同的报错，指向完全不同的原因。先看你终端里弹出的是哪一句，能直接缩小一大半排查范围：</p>
+<table>
+<thead>
+<tr>
+<th>报错信息</th>
+<th>最可能的原因</th>
+<th>先看哪一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Connection timed out</code> / 卡住无响应</td>
+<td>IP 被墙、机器没起来、本地线路不通</td>
+<td>第一、二步</td>
+</tr>
+<tr>
+<td><code>Connection refused</code></td>
+<td>机器活着但 sshd 没跑、或端口不对</td>
+<td>第三步</td>
+</tr>
+<tr>
+<td><code>Permission denied (publickey,password)</code></td>
+<td>认证问题：用户名/密码/密钥不对</td>
+<td>第四步</td>
+</tr>
+<tr>
+<td><code>Host key verification failed</code></td>
+<td>重装过系统、本地缓存了旧指纹</td>
+<td>见下方「重装后连不上」</td>
+</tr>
+<tr>
+<td>时通时断、<code>packet loss</code>、晚高峰卡</td>
+<td>线路拥堵，普通直连通病</td>
+<td>第二步 + 文末换线路</td>
+</tr>
+</tbody>
+</table>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-emerald-50 border-emerald-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-emerald-800">重装系统后突然连不上？</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-emerald-900/80 [&amp;_a]:text-emerald-700"><p>如果你刚重装过系统，报 <code>Host key verification failed</code> 或 <code>REMOTE HOST IDENTIFICATION HAS CHANGED</code>，这是本地缓存了旧机器的指纹。清掉即可：<code>ssh-keygen -R &lt;你的IP&gt;</code>（Windows 同样适用），再重连。</p></div></div></div>
+<h2 id="第一步确认机器本身在正常运行">第一步：确认机器本身在正常运行</h2>
+<p>连不上时，先别急着怀疑网络——机器可能压根没起来。</p>
+<ol>
+<li>登录 <a href="https://app.cloudcone.com/">CloudCone 控制台</a>，看目标 VPS 的状态是不是 <strong>Running</strong>；如果是 Stopped，直接开机。</li>
+<li>如果显示 Running 但还是连不上，用控制台自带的 <strong>VNC / Web Console</strong> 登录。这条通道不走 SSH、不受线路影响，能进去就说明<strong>机器活着，问题在网络或 SSH 服务</strong>。</li>
+<li>进 VNC 后看一眼负载，三条命令基本能判断机器是不是被自己压垮了：</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">uptime</span><span style="color:#6A737D">            # 看 load average，数值远高于 CPU 核数说明过载</span></span>
+<span class="line"><span style="color:#B392F0">free</span><span style="color:#79B8FF"> -h</span><span style="color:#6A737D">           # 看内存，available 接近 0 就是内存爆了</span></span>
+<span class="line"><span style="color:#B392F0">df</span><span style="color:#79B8FF"> -h</span><span style="color:#6A737D">             # 看磁盘，某个挂载点 Use% 到 100% 会导致写不进、SSH 卡死</span></span></code></pre>
+<p>正常情况下你会看到类似这样、还有余量的输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ free -h</span></span>
+<span class="line"><span>               total        used        free      available</span></span>
+<span class="line"><span>Mem:           1.9Gi       520Mi       180Mi       1.2Gi</span></span></code></pre>
+<p>如果 <code>available</code> 只剩几十 MB，或 <code>df -h</code> 里根分区 100%，SSH 连不上就是被资源耗尽拖死的，不是网络问题。</p>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-amber-50 border-amber-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-amber-800">小内存机器尤其注意</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-amber-900/80 [&amp;_a]:text-amber-700"><p>1 GB 内存的入门套餐（如 SSD VPS 1）跑数据库、宝塔面板很容易 <strong>OOM</strong>（内存溢出），进程被内核杀掉后 SSH 也可能一起挂掉。VNC 里 <code>free -h</code> 一看便知。这也是我们一直建议建站<strong>从 2G 内存起步</strong>的原因（见 <a href="/blog/cloudcone-how-to-choose">服务器怎么选</a>）。临时救急可以加一块 swap：<code>fallocate -l 1G /swapfile &amp;&amp; chmod 600 /swapfile &amp;&amp; mkswap /swapfile &amp;&amp; swapon /swapfile</code>。</p></div></div></div>
+<h2 id="第二步排查本地到机房的线路">第二步：排查本地到机房的线路</h2>
+<p>机器没问题，就该看你和机房之间通不通。在<strong>本地电脑</strong>上操作：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 测延迟与丢包</span></span>
+<span class="line"><span style="color:#B392F0">ping</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">你的I</span><span style="color:#E1E4E8">P</span><span style="color:#F97583">&gt;</span><span style="color:#6A737D">          # 持续 ping，看丢包和延迟</span></span>
+<span class="line"><span style="color:#B392F0">mtr</span><span style="color:#79B8FF"> -rw</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">你的I</span><span style="color:#E1E4E8">P</span><span style="color:#F97583">&gt;</span><span style="color:#6A737D">       # 逐跳路由 + 丢包（Windows 用 tracert 或 WinMTR）</span></span></code></pre>
+<p><code>mtr</code> 的输出要会看——重点看<strong>从哪一跳开始丢包</strong>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span> Host                          Loss%   Snt   Last   Avg</span></span>
+<span class="line"><span> 1. 192.168.1.1                 0.0%    10    1.2    1.3     ← 你家路由器，正常</span></span>
+<span class="line"><span> 5. xxx.chinatelecom.net        0.0%    10   35.0   36.1     ← 国内骨干，正常</span></span>
+<span class="line"><span> 9. xxx.los-angeles.multacom   28.0%    10  210.0  215.4     ← 从这跳开始丢包，落地段拥堵</span></span></code></pre>
+<ul>
+<li><strong>前几跳正常、越靠近落地丢包越高</strong>：典型的<strong>回国线路拥堵</strong>，尤其 CloudCone 低价套餐走普通直连，晚高峰移动、联通容易掉包。这不是 SSH 的错，是线路的锅（我们 <a href="/blog/cloudcone-los-angeles-review">洛杉矶实测</a> 的全国均值就有 ~195ms、丢包约 9%）。</li>
+<li><strong>第一跳就丢包</strong>：问题在你本地网络/路由器，先重启路由或换网络。</li>
+<li><strong>完全 ping 不通</strong>：可能 IP 被墙——换个网络（比如手机热点）再 ping，若热点能通就是本地这条线到该机房被阻断。</li>
+</ul>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-emerald-50 border-emerald-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-emerald-800">判断是不是被墙</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-emerald-900/80 [&amp;_a]:text-emerald-700"><p>用在线工具（如 ping.pe、itdog.cn）从<strong>多地</strong>同时 ping 你的 IP。如果<strong>国外节点全通、国内全丢</strong>，基本可判定为 IP 在国内方向被阻断。这种情况调 SSH 没用，<strong>在控制台更换一个 IP</strong>（有的套餐支持）或换机房是最直接的解法。</p></div></div></div>
+<h2 id="第三步检查-ssh-服务与端口">第三步：检查 SSH 服务与端口</h2>
+<p>能 ping 通、但 SSH 就是 <code>Connection refused</code> 或超时，问题多半在服务端。用 VNC 进去查：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. 确认 sshd 在跑（active (running) 才正常）</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> status</span><span style="color:#9ECBFF"> ssh</span><span style="color:#6A737D">      # Debian/Ubuntu；CentOS 用 systemctl status sshd</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. 确认监听端口（默认 22，改过要对上）</span></span>
+<span class="line"><span style="color:#B392F0">ss</span><span style="color:#79B8FF"> -tlnp</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> ssh</span></span>
+<span class="line"><span style="color:#6A737D"># 正常输出类似：LISTEN 0 128 0.0.0.0:22 ... users:((&quot;sshd&quot;,...))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. 查防火墙有没有把端口挡了</span></span>
+<span class="line"><span style="color:#B392F0">ufw</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">                        # Ubuntu</span></span>
+<span class="line"><span style="color:#B392F0">iptables</span><span style="color:#79B8FF"> -L</span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> 22</span><span style="color:#6A737D">          # 通用</span></span></code></pre>
+<p>常见坑与对应解法：</p>
+<ul>
+<li><strong>改过 SSH 端口却忘了</strong>：连接时要带端口 <code>ssh -p &lt;端口&gt; root@&lt;IP&gt;</code>，别再用默认 22。</li>
+<li><strong>sshd 没运行</strong>：<code>systemctl start ssh &amp;&amp; systemctl enable ssh</code> 启动并设开机自启。</li>
+<li><strong>防火墙没放行</strong>：<code>ufw allow 22/tcp</code>（或你的自定义端口），CloudCone 本身没有外层安全组，主要看系统内防火墙。</li>
+<li><strong>fail2ban 把你自己 IP 封了</strong>：多次输错密码后会被 ban。查：<code>fail2ban-client status sshd</code>；解封：<code>fail2ban-client set sshd unbanip &lt;你的IP&gt;</code>。</li>
+</ul>
+<h2 id="第四步认证问题密码--密钥">第四步：认证问题（密码 / 密钥）</h2>
+<p>能连上但一直提示 <code>Permission denied</code> 或密码错误：</p>
+<ul>
+<li><strong>用户名对不对</strong>：CloudCone 默认多为 <code>root</code>，别用 <code>ubuntu</code>、<code>admin</code> 之类。</li>
+<li><strong>密码登录被拒</strong>：VNC 里检查 <code>/etc/ssh/sshd_config</code> 的 <code>PasswordAuthentication</code> 是否为 <code>yes</code>，改完 <code>systemctl restart ssh</code>。</li>
+<li><strong>密钥登录失败</strong>：检查三处——本地私钥权限 <code>chmod 600 ~/.ssh/id_rsa</code>；服务器 <code>~/.ssh/authorized_keys</code> 里有没有你的公钥、权限是不是 600；<code>sshd_config</code> 里 <code>PubkeyAuthentication yes</code>。</li>
+</ul>
+<p>如果你还没配过密钥、想用更安全的密钥登录，本地生成再传上去：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 本地生成一对密钥（一路回车即可）</span></span>
+<span class="line"><span style="color:#B392F0">ssh-keygen</span><span style="color:#79B8FF"> -t</span><span style="color:#9ECBFF"> ed25519</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 把公钥传到服务器（之后就能免密登录）</span></span>
+<span class="line"><span style="color:#B392F0">ssh-copy-id</span><span style="color:#9ECBFF"> root@</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">你的I</span><span style="color:#E1E4E8">P</span><span style="color:#F97583">&gt;</span></span></code></pre>
+<h2 id="不同系统的客户端小抄">不同系统的客户端小抄</h2>
+<ul>
+<li><strong>Windows</strong>：Win10/11 自带 OpenSSH，直接在 PowerShell 里 <code>ssh root@&lt;IP&gt;</code>；也可以用 PuTTY（图形化，填 IP + 端口即可）。想看逐跳丢包用 <strong>WinMTR</strong>。</li>
+<li><strong>macOS / Linux</strong>：自带终端直接 <code>ssh</code>、<code>mtr</code>，无需额外安装。</li>
+<li><strong>手机</strong>：iOS 用 Termius，安卓用 JuiceSSH，应急连一下够用。</li>
+</ul>
+<h2 id="一张排查清单">一张排查清单</h2>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">按这个顺序过一遍</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ol>
+<li>控制台看机器是否 Running → 不是就开机</li>
+<li>VNC 能否进 → 能进说明机器活着，问题在网络/SSH；顺手 <code>free -h</code>、<code>df -h</code> 看有没有过载</li>
+<li>本地 <code>ping</code> / <code>mtr</code> → 判断是线路拥堵、本地问题还是被墙</li>
+<li>VNC 里查 sshd 状态、监听端口、防火墙、fail2ban</li>
+<li>查认证：用户名、端口、密码开关、密钥权限、sshd_config</li>
+<li>重装后报指纹错 → 本地 <code>ssh-keygen -R &lt;IP&gt;</code> 清缓存</li>
+</ol></div></div></div>
+<h2 id="如果是线路问题换机比硬扛更省心">如果是线路问题，换机比硬扛更省心</h2>
+<p>走完流程你会发现：<strong>很多「SSH 连不上」的锅其实在线路</strong>——CloudCone 低价套餐是普通直连，没有 CN2 GIA 那类优质回国线路覆盖，晚高峰丢包、断流是结构性的，靠调 SSH 参数治标不治本（想缓解可先试软件层优化，见 <a href="/blog/vps-china-route-alternatives">回国线路差怎么办</a>）。</p>
+<p>如果你对连通性要求高（远程办公、稳定代理、给国内用户的服务），与其反复排查，不如直接选一条线路更稳的机器：</p>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-emerald-50 border-emerald-200"><p class="flex items-center gap-2 font-bold mb-2 text-emerald-900"><span class="text-xl leading-none">🔧</span>推荐：搬瓦工</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-emerald-700"><p>搬瓦工的 CN2 GIA 系列专为回国优化，晚高峰延迟和丢包明显优于普通直连，SSH 稳定性和日常体验都省心不少。追求「连得上、不断线」的首选。</p></div><a href="https://bwh81.net/aff.php?aff=75629" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-emerald-500 hover:bg-emerald-600">看搬瓦工 CN2 GIA<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-amber-50 border-amber-200"><p class="flex items-center gap-2 font-bold mb-2 text-amber-900"><span class="text-xl leading-none">🚀</span>推荐：RackNerd</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-amber-700"><p>预算优先、能接受普通直连的话，RackNerd 的低价年付款性价比很高，适合建站与轻量自用；线路水平与 CloudCone 相近，胜在便宜稳定，且是原生 IP。</p></div><a href="https://my.racknerd.com/aff.php?aff=12162" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-amber-500 hover:bg-amber-600">看 RackNerd 套餐<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">延伸阅读</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ul>
+<li>后台基础操作（开关机、VNC、重装）：<a href="/blog/cloudcone-panel-guide">CloudCone 控制台使用教程</a></li>
+<li>想对比不同机房的实测线路：<a href="/blog/cloudcone-los-angeles-review">CloudCone 洛杉矶 VPS 实测</a></li>
+<li>各档套餐配置与历史价格：<a href="/plans">套餐大全</a></li>
+</ul></div></div></div></div><!-- 作者简介：建立真实经验背书（E-E-A-T），内容集中在 config.ts 的 AUTHOR --><footer class="mt-14 flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">L</div><div><p class="font-bold text-slate-900">Leo</p><p class="mt-1 text-sm leading-relaxed text-slate-600">多年低价 VPS 重度用户，自掏腰包实测过 CloudCone、搬瓦工、RackNerd 等十余家美国主机。这里只写自己跑过分、踩过坑的真实体验，好的坏的都说。</p></div></footer></article></main><footer class="bg-white border-t border-slate-200 mt-24"><div class="shell py-14"><div class="flex flex-col gap-10 md:flex-row md:justify-between"><!-- 品牌 --><div class="max-w-sm"><a href="/" class="inline-flex items-center gap-2 text-base font-bold text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><p class="mt-4 text-sm text-slate-500 leading-relaxed">CloudCone 历史套餐、优惠活动与真实替代评测，帮你告别信息差、避开高价车。</p></div><!-- 导航 --><nav class="grid grid-cols-2 gap-x-12 gap-y-3 text-sm sm:flex sm:gap-10"><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">浏览</span><a href="/" class="text-slate-600 hover:text-primary-600 transition-colors">首页</a><a href="/plans" class="text-slate-600 hover:text-primary-600 transition-colors">所有套餐</a></div><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">资料</span><a href="/events" class="text-slate-600 hover:text-primary-600 transition-colors">历史活动</a><a href="/blog" class="text-slate-600 hover:text-primary-600 transition-colors">博客</a><a href="/disclosure" class="text-slate-600 hover:text-primary-600 transition-colors">披露与免责</a></div></nav></div><!-- 广告与联盟披露 --><div class="mt-12 pt-8 border-t border-slate-200 flex items-start gap-2.5 text-xs text-slate-400 leading-relaxed"><svg class="w-4 h-4 shrink-0 mt-px text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg><p><span class="font-semibold text-slate-500">广告与联盟披露：</span>本站部分链接为推广 / 联盟链接（包含 CloudCone、RackNerd 等服务商）。当你通过这些链接完成购买时，我们可能获得一定比例的佣金；这不会增加你的任何费用，也不会影响我们评测内容的客观性。<a href="/disclosure" class="text-primary-600 hover:text-primary-700 font-medium whitespace-nowrap">查看完整披露 →</a></p></div><!-- 版权栏 --><div class="mt-6 flex flex-col gap-1.5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between"><p>&copy; 2026 CloudCone Guide · 非官方推荐与评测网站</p><p>所有评测基于真实体验，购买前请仔细阅读用户协议。</p></div></div></footer></body></html>

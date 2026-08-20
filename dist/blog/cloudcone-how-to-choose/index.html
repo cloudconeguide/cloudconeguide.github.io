@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="zh-CN" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.2.2"><title>CloudCone 服务器怎么选？全套餐配置解析与选购建议 - CloudCone 指南</title><meta name="description" content="CloudCone 套餐从 $28/年的 1G 小鸡到双路独立服务器，到底怎么选？按用途和预算，把 SSD VPS 1–6 和独立服务器逐档拆开讲清楚，附一张一看就懂的选购建议表，以及临时升 CPU、IPv6、多 IP 等容易忽略的细节。"><link rel="canonical" href="https://cloudconeguide.github.io/blog/cloudcone-how-to-choose"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="CloudCone 指南"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="CloudCone 服务器怎么选？全套餐配置解析与选购建议 - CloudCone 指南"><meta property="og:description" content="CloudCone 套餐从 $28/年的 1G 小鸡到双路独立服务器，到底怎么选？按用途和预算，把 SSD VPS 1–6 和独立服务器逐档拆开讲清楚，附一张一看就懂的选购建议表，以及临时升 CPU、IPv6、多 IP 等容易忽略的细节。"><meta property="og:url" content="https://cloudconeguide.github.io/blog/cloudcone-how-to-choose"><meta property="og:image" content="https://cloudconeguide.github.io/og-default.svg"><meta property="article:published_time" content="2026-08-18T00:00:00.000Z"><meta property="article:modified_time" content="2026-08-18T00:00:00.000Z"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CloudCone 服务器怎么选？全套餐配置解析与选购建议 - CloudCone 指南"><meta name="twitter:description" content="CloudCone 套餐从 $28/年的 1G 小鸡到双路独立服务器，到底怎么选？按用途和预算，把 SSD VPS 1–6 和独立服务器逐档拆开讲清楚，附一张一看就懂的选购建议表，以及临时升 CPU、IPv6、多 IP 等容易忽略的细节。"><meta name="twitter:image" content="https://cloudconeguide.github.io/og-default.svg"><!-- 结构化数据 --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://cloudconeguide.github.io/#website","url":"https://cloudconeguide.github.io/","name":"CloudCone 指南与真实评测","description":"CloudCone 历史套餐大全、最新优惠活动及深度替代评测指南。","inLanguage":"zh-CN"},{"@type":"Organization","@id":"https://cloudconeguide.github.io/#organization","name":"CloudCone 指南","url":"https://cloudconeguide.github.io/","logo":"https://cloudconeguide.github.io/og-default.svg"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CloudCone 服务器怎么选？全套餐配置解析与选购建议","description":"CloudCone 套餐从 $28/年的 1G 小鸡到双路独立服务器，到底怎么选？按用途和预算，把 SSD VPS 1–6 和独立服务器逐档拆开讲清楚，附一张一看就懂的选购建议表，以及临时升 CPU、IPv6、多 IP 等容易忽略的细节。","datePublished":"2026-08-18T00:00:00.000Z","dateModified":"2026-08-18T00:00:00.000Z","author":{"@type":"Person","name":"Leo"},"publisher":{"@type":"Organization","name":"CloudCone 指南","logo":{"@type":"ImageObject","url":"https://cloudconeguide.github.io/og-default.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cloudconeguide.github.io/blog/cloudcone-how-to-choose"},"inLanguage":"zh-CN"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://cloudconeguide.github.io/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://cloudconeguide.github.io/blog"},{"@type":"ListItem","position":3,"name":"CloudCone 服务器怎么选？全套餐配置解析与选购建议","item":"https://cloudconeguide.github.io/blog/cloudcone-how-to-choose"}]}</script><link rel="stylesheet" href="/_astro/Layout.CIcewFPN.css"></head><body class="min-h-screen flex flex-col"><header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/70"><div class="shell h-16 flex items-center justify-between"><a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><nav class="hidden sm:flex items-center gap-1"><a href="/" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">首页</a><a href="/plans" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">所有套餐</a><a href="/events" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">历史活动</a><a href="/blog" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">博客</a></nav></div></header><main class="flex-grow"><article class="max-w-3xl mx-auto px-4 sm:px-6 py-16"><a href="/blog" class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors mb-8"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>返回博客</a><header class="mb-10"><div class="flex items-center gap-3 text-sm text-slate-400 mb-4"><span>2026年8月17日</span><span class="w-1 h-1 rounded-full bg-slate-300"></span><span>Leo</span></div><h1 class="text-4xl font-extrabold text-slate-900 leading-tight">CloudCone 服务器怎么选？全套餐配置解析与选购建议</h1></header><div class="prose prose-slate prose-primary lg:prose-lg max-w-none prose-a:text-primary-600 prose-a:no-underline [&amp;_a:hover]:underline [&amp;_a:hover]:text-primary-700 border-t border-slate-200 pt-10"><p>CloudCone 的产品从 <strong>$28/年的 1G 小鸡</strong>一路到<strong>双路独立服务器</strong>，档位不少，新手很容易挑花眼。这篇按「<strong>用途 + 预算</strong>」两个维度，把每一档拆开讲清楚，看完你就知道该下手哪个。</p>
+<h2 id="先想清楚一件事你拿它干嘛">先想清楚一件事：你拿它干嘛</h2>
+<p>选配置之前，先定位用途——这决定了你该把钱花在内存、CPU 还是磁盘上：</p>
+<div class="not-prose my-6"><p class="eyebrow mb-3">适合场景</p><div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><div class="card p-4"><div class="text-2xl mb-2">📝</div><p class="font-semibold text-slate-800 text-sm">个人博客 / 小站</p><p class="mt-1 text-xs text-slate-500 leading-relaxed">看内存，1–2G 足够</p></div><div class="card p-4"><div class="text-2xl mb-2">🛠️</div><p class="font-semibold text-slate-800 text-sm">面板建站 / 应用</p><p class="mt-1 text-xs text-slate-500 leading-relaxed">内存 + CPU 都要顾</p></div><div class="card p-4"><div class="text-2xl mb-2">🤖</div><p class="font-semibold text-slate-800 text-sm">解锁 AI / 流媒体</p><p class="mt-1 text-xs text-slate-500 leading-relaxed">看 IP 与出口质量</p></div><div class="card p-4"><div class="text-2xl mb-2">🏢</div><p class="font-semibold text-slate-800 text-sm">站群 / 电商大项目</p><p class="mt-1 text-xs text-slate-500 leading-relaxed">直接上独立服务器</p></div></div></div>
+<p>一句话原则：<strong>建站看内存、解锁看 IP、大项目看是否独享</strong>。选错方向，配置再高也用不到点子上。</p>
+<h2 id="ssd-vps-全系速览在售-6-档">SSD VPS 全系速览（在售 6 档）</h2>
+<p>所有 SSD VPS 都是 <strong>KVM 虚拟化、RAID-10 纯 SSD、美国机房、1 个 IPv4 + 3 个 IPv6，CPU 在开通前还能临时升级</strong>。差别就在内存/核心/磁盘/流量：</p>
+<table>
+<thead>
+<tr>
+<th>套餐</th>
+<th>配置</th>
+<th>流量</th>
+<th>年付价</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/plan/516-ssd-vps-1">SSD VPS 1</a></td>
+<td>2 核 / 1G / 30G</td>
+<td>4TB</td>
+<td><strong>$28</strong></td>
+<td>入门，轻量自用</td>
+</tr>
+<tr>
+<td><a href="/plan/517-ssd-vps-2">SSD VPS 2</a></td>
+<td>4 核 / 2G / 60G</td>
+<td>7TB</td>
+<td><strong>$46</strong></td>
+<td>🔥 性价比之王，最推荐</td>
+</tr>
+<tr>
+<td><a href="/plan/518-ssd-vps-3">SSD VPS 3</a></td>
+<td>6 核 / 3G / 90G</td>
+<td>8.5TB</td>
+<td>$69</td>
+<td>过渡档</td>
+</tr>
+<tr>
+<td><a href="/plan/519-ssd-vps-4">SSD VPS 4</a></td>
+<td>8 核 / 4G / 120G</td>
+<td>10TB</td>
+<td>$92</td>
+<td>生产主力</td>
+</tr>
+<tr>
+<td><a href="/plan/520-ssd-vps-5">SSD VPS 5</a></td>
+<td>12 核 / 8G / 240G</td>
+<td>15TB</td>
+<td>$174</td>
+<td>⭐ 大内存性价比</td>
+</tr>
+<tr>
+<td><a href="/plan/521-ssd-vps-6">SSD VPS 6</a></td>
+<td>14 核 / 16G / 480G</td>
+<td>25TB</td>
+<td>$322</td>
+<td>系列顶配</td>
+</tr>
+</tbody>
+</table>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-emerald-50 border-emerald-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-emerald-800">不知道选哪个？记住两档就够</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-emerald-900/80 [&amp;_a]:text-emerald-700"><ul>
+<li><strong>只是练手 / 挂个小站 / 自用</strong>：选 <strong>VPS 1（$28）</strong>，够用不浪费；</li>
+<li><strong>想一步到位、跑面板 + 数据库</strong>：闭眼选 <strong>VPS 2（$46）</strong>——4 核 2G 的规格价格比是全系最好的，官方也标了 Fast Seller。</li>
+</ul></div></div></div>
+<h3 id="各档怎么挑配典型场景">各档怎么挑（配典型场景）</h3>
+<ul>
+<li><strong>1G 内存（VPS 1）</strong>：跑单个静态站、轻量脚本、小型代理没问题；但装宝塔面板 + 数据库会吃紧，硬上重负载容易 OOM（进程被杀，见 <a href="/blog/cloudcone-ssh-troubleshooting">SSH 排查</a>）。适合：练手、挂机、单静态站；</li>
+<li><strong>2G 内存（VPS 2）</strong>：绝大多数人的甜点。面板建站、WordPress、小型应用、企业官网都从容，价格还低。适合：个人博客、企业站、一般建站；</li>
+<li><strong>3G（VPS 3）</strong>：比较尴尬的过渡点，除非你正好卡在这个内存需求，否则建议直接看 VPS 2 或 VPS 4；</li>
+<li><strong>4G（VPS 4）</strong>：正经生产站、小型商城、多个轻站点。适合：有一定流量的业务站；</li>
+<li><strong>8G（VPS 5）</strong>：吃内存的应用、多站点、跑几个 Docker 服务，<strong>每 GB 单价最划算</strong>。适合：多项目、重应用；</li>
+<li><strong>16G（VPS 6）</strong>：系列顶配，高负载自用、开发测试环境。真到这个量级也可以开始考虑独立服务器了。</li>
+</ul>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">两个容易忽略的细节</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ul>
+<li><strong>临时升 CPU</strong>：SSD VPS 在<strong>开通前可以临时升级 CPU 核心数</strong>，要跑一次性重任务（首次导数据、编译）时用得上；</li>
+<li><strong>IPv6 默认未开启</strong>：实测机器是仅 IPv4 Online、<a href="/blog/cloudcone-los-angeles-review">IPv6 未开启</a>，虽然配置写着带 3 个 IPv6，但用途依赖 IPv6 的要先确认能否开通，别开通后才发现。</li>
+</ul></div></div></div>
+<h2 id="什么时候该上独立服务器">什么时候该上独立服务器</h2>
+<p>如果你要做的是<strong>站群、电商、大型项目</strong>这类高负载需求，共享的 VPS 就不合适了——该上<strong>独立服务器</strong>，整机物理硬件独享，配 ECC 内存、RAID 卡、IPMI 带外管理，/29 IPv4（<strong>5 个可用地址</strong>），洛杉矶机房。</p>
+<table>
+<thead>
+<tr>
+<th>套餐</th>
+<th>配置</th>
+<th>月付价</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/plan/33-E3-1270v6-D">E3-1270 v6</a></td>
+<td>4核8线程@4.2G / 32G ECC / 1T</td>
+<td>$112</td>
+<td>独服入门</td>
+</tr>
+<tr>
+<td><a href="/plan/29-E5-2697v2-D">双路 E5-2697 v2</a></td>
+<td>24核48线程 / 128G ECC / 1T</td>
+<td>$175</td>
+<td>🔥 多核性价比</td>
+</tr>
+<tr>
+<td><a href="/plan/30-E5-2697v2-1-D">E5-2697 v2 · 256G</a></td>
+<td>24核48线程 / 256G ECC / 2T</td>
+<td>$249</td>
+<td>大内存</td>
+</tr>
+<tr>
+<td><a href="/plan/34-Silver-4214">Silver 4214 · 128G</a></td>
+<td>24核48线程 / 128G ECC</td>
+<td>$358</td>
+<td>新平台 Dell 整机</td>
+</tr>
+<tr>
+<td><a href="/plan/35-Silver-4214-2">Silver 4214 · 256G</a></td>
+<td>24核48线程 / 256G ECC</td>
+<td>$454</td>
+<td>系列顶配</td>
+</tr>
+</tbody>
+</table>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">独立服务器怎么挑</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ul>
+<li><strong>要单核强、跑主频敏感应用</strong>：选 <strong>E3-1270 v6</strong>（4.2G 高主频），入门价也友好；</li>
+<li><strong>要多核 + 大内存跑站群/虚拟化</strong>：**双路 E5-2697 v2（$175）**起步，24 核 48 线程性价比最高；</li>
+<li><strong>追求平台新、能效好、整机品质</strong>：选 <strong>Silver 4214（Dell 整机）</strong>，价格更高但更省心；</li>
+<li><strong>站群多 IP</strong>：/29 给 5 个可用 IPv4，一站一 IP 分散关联（详见 <a href="/blog/foreign-trade-website-server">外贸/站群服务器怎么选</a>）。</li>
+</ul></div></div></div>
+<h2 id="一句话选购建议">一句话选购建议</h2>
+<ul>
+<li><strong>练手 / 轻量自用</strong> → SSD VPS 1（$28）</li>
+<li><strong>建站主力 / 一步到位</strong> → SSD VPS 2（$46，最推荐）</li>
+<li><strong>正经业务 / 大内存</strong> → SSD VPS 4 或 5</li>
+<li><strong>站群 / 电商 / 大项目</strong> → 独立服务器，从双路 E5-2697 v2 起步</li>
+</ul>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-amber-50 border-amber-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-amber-800">下单前的两个提醒</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-amber-900/80 [&amp;_a]:text-amber-700"><p>一是<strong>对一下历史价</strong>（<a href="/events">历史活动档案</a>），别在涨价后的非促销期接高价车；二是 CloudCone <strong>不支持退款</strong>，拿不准就先用<strong>按小时计费</strong>的机器试一轮再上年付（见 <a href="/blog/cloudcone-refund">还能退款吗</a>）。</p></div></div></div>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-primary-50 border-primary-200"><p class="flex items-center gap-2 font-bold mb-2 text-primary-900"><span class="text-xl leading-none">☁️</span>推荐：CloudCone</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-primary-700"><p>所有在售套餐的完整配置、历史价格与购买入口，都整理在 <a href="/plans">套餐大全</a>。</p></div><a href="https://app.cloudcone.com/?ref=11765" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-primary-600 hover:bg-primary-700">浏览全部 CloudCone 套餐<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">延伸阅读</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ul>
+<li>这家到底怎么样：<a href="/blog/cloudcone-review">CloudCone 怎么样</a></li>
+<li>建站选配置通识：<a href="/blog/how-to-choose-vps-for-website">新手建站怎么选服务器</a></li>
+<li>付款方式（支持支付宝）：<a href="/blog/cloudcone-payment">CloudCone 支付方式全攻略</a></li>
+<li>怎么买最便宜：<a href="/blog/cloudcone-coupon">CloudCone 优惠码与促销</a></li>
+</ul></div></div></div></div><!-- 作者简介：建立真实经验背书（E-E-A-T），内容集中在 config.ts 的 AUTHOR --><footer class="mt-14 flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">L</div><div><p class="font-bold text-slate-900">Leo</p><p class="mt-1 text-sm leading-relaxed text-slate-600">多年低价 VPS 重度用户，自掏腰包实测过 CloudCone、搬瓦工、RackNerd 等十余家美国主机。这里只写自己跑过分、踩过坑的真实体验，好的坏的都说。</p></div></footer></article></main><footer class="bg-white border-t border-slate-200 mt-24"><div class="shell py-14"><div class="flex flex-col gap-10 md:flex-row md:justify-between"><!-- 品牌 --><div class="max-w-sm"><a href="/" class="inline-flex items-center gap-2 text-base font-bold text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><p class="mt-4 text-sm text-slate-500 leading-relaxed">CloudCone 历史套餐、优惠活动与真实替代评测，帮你告别信息差、避开高价车。</p></div><!-- 导航 --><nav class="grid grid-cols-2 gap-x-12 gap-y-3 text-sm sm:flex sm:gap-10"><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">浏览</span><a href="/" class="text-slate-600 hover:text-primary-600 transition-colors">首页</a><a href="/plans" class="text-slate-600 hover:text-primary-600 transition-colors">所有套餐</a></div><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">资料</span><a href="/events" class="text-slate-600 hover:text-primary-600 transition-colors">历史活动</a><a href="/blog" class="text-slate-600 hover:text-primary-600 transition-colors">博客</a><a href="/disclosure" class="text-slate-600 hover:text-primary-600 transition-colors">披露与免责</a></div></nav></div><!-- 广告与联盟披露 --><div class="mt-12 pt-8 border-t border-slate-200 flex items-start gap-2.5 text-xs text-slate-400 leading-relaxed"><svg class="w-4 h-4 shrink-0 mt-px text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg><p><span class="font-semibold text-slate-500">广告与联盟披露：</span>本站部分链接为推广 / 联盟链接（包含 CloudCone、RackNerd 等服务商）。当你通过这些链接完成购买时，我们可能获得一定比例的佣金；这不会增加你的任何费用，也不会影响我们评测内容的客观性。<a href="/disclosure" class="text-primary-600 hover:text-primary-700 font-medium whitespace-nowrap">查看完整披露 →</a></p></div><!-- 版权栏 --><div class="mt-6 flex flex-col gap-1.5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between"><p>&copy; 2026 CloudCone Guide · 非官方推荐与评测网站</p><p>所有评测基于真实体验，购买前请仔细阅读用户协议。</p></div></div></footer></body></html>

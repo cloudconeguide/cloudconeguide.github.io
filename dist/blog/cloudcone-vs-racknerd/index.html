@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-CN" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.2.2"><title>CloudCone vs RackNerd：年付低价机对决（附实测数据） - CloudCone 指南</title><meta name="description" content="CloudCone 与 RackNerd 都是主打年付低价的美国 VPS。用两台实测数据对比 CPU、磁盘、带宽、回国线路、解锁与 IP 质量——两家都是普通线路，差异在原生 IP、按小时试机与价格，结合实操经验教你怎么选。"><link rel="canonical" href="https://cloudconeguide.github.io/blog/cloudcone-vs-racknerd"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="CloudCone 指南"><meta property="og:locale" content="zh_CN"><meta property="og:title" content="CloudCone vs RackNerd：年付低价机对决（附实测数据） - CloudCone 指南"><meta property="og:description" content="CloudCone 与 RackNerd 都是主打年付低价的美国 VPS。用两台实测数据对比 CPU、磁盘、带宽、回国线路、解锁与 IP 质量——两家都是普通线路，差异在原生 IP、按小时试机与价格，结合实操经验教你怎么选。"><meta property="og:url" content="https://cloudconeguide.github.io/blog/cloudcone-vs-racknerd"><meta property="og:image" content="https://cloudconeguide.github.io/og-default.svg"><meta property="article:published_time" content="2026-08-18T00:00:00.000Z"><meta property="article:modified_time" content="2026-08-18T00:00:00.000Z"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CloudCone vs RackNerd：年付低价机对决（附实测数据） - CloudCone 指南"><meta name="twitter:description" content="CloudCone 与 RackNerd 都是主打年付低价的美国 VPS。用两台实测数据对比 CPU、磁盘、带宽、回国线路、解锁与 IP 质量——两家都是普通线路，差异在原生 IP、按小时试机与价格，结合实操经验教你怎么选。"><meta name="twitter:image" content="https://cloudconeguide.github.io/og-default.svg"><!-- 结构化数据 --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://cloudconeguide.github.io/#website","url":"https://cloudconeguide.github.io/","name":"CloudCone 指南与真实评测","description":"CloudCone 历史套餐大全、最新优惠活动及深度替代评测指南。","inLanguage":"zh-CN"},{"@type":"Organization","@id":"https://cloudconeguide.github.io/#organization","name":"CloudCone 指南","url":"https://cloudconeguide.github.io/","logo":"https://cloudconeguide.github.io/og-default.svg"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CloudCone vs RackNerd：年付低价机对决（附实测数据）","description":"CloudCone 与 RackNerd 都是主打年付低价的美国 VPS。用两台实测数据对比 CPU、磁盘、带宽、回国线路、解锁与 IP 质量——两家都是普通线路，差异在原生 IP、按小时试机与价格，结合实操经验教你怎么选。","datePublished":"2026-08-18T00:00:00.000Z","dateModified":"2026-08-18T00:00:00.000Z","author":{"@type":"Person","name":"Leo"},"publisher":{"@type":"Organization","name":"CloudCone 指南","logo":{"@type":"ImageObject","url":"https://cloudconeguide.github.io/og-default.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cloudconeguide.github.io/blog/cloudcone-vs-racknerd"},"inLanguage":"zh-CN"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://cloudconeguide.github.io/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://cloudconeguide.github.io/blog"},{"@type":"ListItem","position":3,"name":"CloudCone vs RackNerd：年付低价机对决（附实测数据）","item":"https://cloudconeguide.github.io/blog/cloudcone-vs-racknerd"}]}</script><link rel="stylesheet" href="/_astro/Layout.CIcewFPN.css"></head><body class="min-h-screen flex flex-col"><header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/70"><div class="shell h-16 flex items-center justify-between"><a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><nav class="hidden sm:flex items-center gap-1"><a href="/" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">首页</a><a href="/plans" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">所有套餐</a><a href="/events" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">历史活动</a><a href="/blog" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-700 hover:bg-primary-50 transition-colors">博客</a></nav></div></header><main class="flex-grow"><article class="max-w-3xl mx-auto px-4 sm:px-6 py-16"><a href="/blog" class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors mb-8"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>返回博客</a><header class="mb-10"><div class="flex items-center gap-3 text-sm text-slate-400 mb-4"><span>2026年8月17日</span><span class="w-1 h-1 rounded-full bg-slate-300"></span><span>Leo</span></div><h1 class="text-4xl font-extrabold text-slate-900 leading-tight">CloudCone vs RackNerd：年付低价机对决（附实测数据）</h1></header><div class="prose prose-slate prose-primary lg:prose-lg max-w-none prose-a:text-primary-600 prose-a:no-underline [&amp;_a:hover]:underline [&amp;_a:hover]:text-primary-700 border-t border-slate-200 pt-10"><p>CloudCone 和 RackNerd 走的是同一条路线：<strong>美西机房、普通线路、极致低价年付</strong>。两家太像了，我自己也来回用过，很多人纠结到底选谁。下面用两台真实测过的机器对比——CloudCone 洛杉矶对 RackNerd 圣何塞。</p>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">先说明测试机型档位不同</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><p>CloudCone 测的是 4 vCPU / 3.8G 款，RackNerd 测的是 1 核 / 1G 款，<strong>档位不一样</strong>。所以重点看每项指标的相对水平，以及原生 IP、价格、退款这些机型无关的差异。</p></div></div></div>
+<h2 id="一图看懂核心差异">一图看懂核心差异</h2>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>CloudCone 洛杉矶</th>
+<th>RackNerd 圣何塞</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>E5-2697 v2，单核 sysbench <strong>919</strong></td>
+<td>E5-2680 v2，单核 <strong>895</strong></td>
+</tr>
+<tr>
+<td>内存带宽</td>
+<td>~4459 MiB/s</td>
+<td>~4261 MiB/s</td>
+</tr>
+<tr>
+<td>磁盘 4K 随机读写</td>
+<td>~26 MiB/s / ~6600 IOPS</td>
+<td>~12.4 MiB/s / ~3167 IOPS</td>
+</tr>
+<tr>
+<td>磁盘顺序（bench.sh 均值）</td>
+<td>~208 MB/s</td>
+<td>~575 MB/s</td>
+</tr>
+<tr>
+<td>国际带宽</td>
+<td>千兆，600~940 Mbps</td>
+<td>千兆，~850 Mbps</td>
+</tr>
+<tr>
+<td>大陆线路</td>
+<td>普通直连，均值 ~195ms</td>
+<td>普通线路，白天 ~189ms / 晚高峰 ~220ms</td>
+</tr>
+<tr>
+<td>IP 类型</td>
+<td>机房 IP</td>
+<td>✅ <strong>原生 IP</strong>（圣克拉拉）</td>
+</tr>
+<tr>
+<td>解锁</td>
+<td>Netflix/ChatGPT/Claude/<strong>TikTok</strong> ✓</td>
+<td>Netflix/ChatGPT/Claude ✓，TikTok ✓</td>
+</tr>
+<tr>
+<td>Disney+/Reddit</td>
+<td>屏蔽</td>
+<td>屏蔽</td>
+</tr>
+<tr>
+<td>特色</td>
+<td>支持<strong>按小时计费</strong>、配置弹性</td>
+<td><strong>多机房可选</strong>、常年低价年付</td>
+</tr>
+</tbody>
+</table>
+<h2 id="硬件互有胜负别只看一个数字">硬件：互有胜负，别只看一个数字</h2>
+<p>两家 CPU 都是老 Xeon E5 v2，单核跑分几乎打平（919 vs 895）。磁盘则各有所长，这里最容易被单一数字误导：</p>
+<ul>
+<li><strong>CloudCone 的 4K 随机读写更快</strong>（26 vs 12.4 MiB/s）——数据库、面板、小文件多的场景更吃这个;</li>
+<li><strong>RackNerd 的顺序读写更快</strong>（bench.sh 575 vs 208 MB/s）——大文件传输、备份、下载更占优。</li>
+</ul>
+<p>内存带宽接近。整体是同一档次，谁也没拉开代差。<strong>看你的负载偏随机还是偏顺序，再决定谁更适合。</strong></p>
+<h2 id="回国线路都是普通线路半斤八两">回国线路：都是普通线路，半斤八两</h2>
+<p>这一点要看清楚：<strong>两家测的都是普通线路，没有 CN2</strong>。CloudCone 洛杉矶均值 ~195ms；RackNerd 圣何塞白天 ~189ms、晚高峰升到 ~220ms。都属于「能用但不惊艳」的美西直连，晚高峰移动、联通都会有波动。<strong>要优质回国线路，这两家都不是答案</strong>——真正想要稳定回国体验，得看搬瓦工的 CN2 GIA 系列。</p>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-emerald-50 border-emerald-200"><p class="flex items-center gap-2 font-bold mb-2 text-emerald-900"><span class="text-xl leading-none">🔧</span>推荐：搬瓦工</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-emerald-700"><p>搬瓦工的 <strong>CN2 GIA 系列</strong>是回国线路标杆，晚高峰延迟和丢包都明显优于普通直连。注意它是<strong>更高价位的系列</strong>——搬瓦工入门款（约 $49）走的是普通 / CN2 线路，<strong>并不含 GIA</strong>，要 CN2 GIA 需单独选购对应系列。</p></div><a href="https://bwh81.net/aff.php?aff=75629" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-emerald-500 hover:bg-emerald-600">要回国线路：看搬瓦工 CN2 GIA<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<h2 id="ip-质量racknerd-是原生-ip">IP 质量：RackNerd 是原生 IP</h2>
+<p>一个实打实的差异——<strong>RackNerd 圣何塞这台是原生 IP</strong>，CloudCone 洛杉矶是普通机房 IP。对在意 IP 纯净度的人（部分流媒体/AI 分区、注册类场景），原生 IP 是加分项，被判定为「代理/风险」的概率更低。两家 25 端口都可用、黑名单都很少，自建邮件都可行。</p>
+<p>解锁方面两家很接近：Netflix、YouTube、Amazon、ChatGPT、Gemini、Claude、TikTok 都能解，<strong>Disney+、Reddit、Spotify 都屏蔽</strong>。差别不大。</p>
+<h2 id="特色功能各有一招">特色功能：各有一招</h2>
+<ul>
+<li><strong>CloudCone</strong>：支持<strong>按小时计费</strong>的 VPS，适合先试机再决定。这一点在它<strong>不支持退款</strong>的背景下尤其实用——花几毛钱把线路和解锁验证清楚，再决定要不要上年付，等于自带一个「后悔窗口」;</li>
+<li><strong>RackNerd</strong>：<strong>机房多</strong>（美国东西岸、欧洲等多地可选），常年有极低价年付促销，想要某个特定地区节点时选择更多。</li>
+</ul>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-amber-50 border-amber-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-amber-800">两家共同的注意点</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-amber-900/80 [&amp;_a]:text-amber-700"><p>退款政策都不宽松，<strong>别冲动买多年付</strong>。CloudCone 能按小时先试；RackNerd 建议买之前查清当前套餐的退款条款，先从短周期起步。</p></div></div></div>
+<h2 id="说说我现在怎么分配">说说我现在怎么分配</h2>
+<p>今年 CloudCone 故障变多之后，我把服务做了<strong>分级迁移</strong>：<strong>重要的放搬瓦工</strong>（稳定、能退款、可选 CN2 GIA），<strong>普通的、能容忍宕机的丢给 RackNerd</strong>（便宜、机房多、原生 IP）。</p>
+<p>RackNerd 在我这儿的定位就很清晰——<strong>不心疼、能随时重建的边角服务</strong>：测试环境、跑脚本、放静态站、做备份落地点。它和 CloudCone 其实是同一生态位的两个选项，差别更多在原生 IP、机房和当下价格，谁便宜、谁有你要的节点就上谁。</p>
+<h2 id="各自适合谁">各自适合谁</h2>
+<div class="not-prose my-6 grid grid-cols-1 sm:grid-cols-2 gap-4"><div class="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5"><p class="flex items-center gap-2 font-bold text-emerald-800 mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>优点</p><ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>CloudCone：想按小时先试机、随机 IO 需求高、认准洛杉矶节点</span></li><li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>RackNerd：想要原生 IP、要多机房选择、顺序读写/大文件、追求极致低价年付</span></li></ul></div><div class="rounded-2xl border border-rose-200 bg-rose-50/60 p-5"><p class="flex items-center gap-2 font-bold text-rose-800 mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>注意 / 短板</p><ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0"></span><span>两家都不适合：重度回国代理（都无 CN2，看搬瓦工 CN2 GIA）</span></li><li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0"></span><span>两家都要注意：退款政策都不宽松，别一上来就买多年付</span></li></ul></div></div>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-primary-50 border-primary-200"><p class="flex items-center gap-2 font-bold mb-2 text-primary-900"><span class="text-xl leading-none">☁️</span>推荐：CloudCone</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-primary-700"><p>洛杉矶硬件扎实、可按小时计费先试后买，配置弹性好。</p></div><a href="https://app.cloudcone.com/?ref=11765" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-primary-600 hover:bg-primary-700">看 CloudCone（支持按小时试机）<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<div class="not-prose my-6 rounded-2xl border p-5 bg-amber-50 border-amber-200"><p class="flex items-center gap-2 font-bold mb-2 text-amber-900"><span class="text-xl leading-none">🚀</span>推荐：RackNerd</p><div class="text-sm leading-relaxed text-slate-700 [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:text-amber-700"><p>原生 IP、机房选择多、年付价格极低，想要特定地区节点时很合适。</p></div><a href="https://my.racknerd.com/aff.php?aff=12162" target="_blank" rel="nofollow noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 py-2.5 px-5 text-white text-center font-semibold rounded-xl transition-colors shadow-sm bg-amber-500 hover:bg-amber-600">看 RackNerd（原生 IP + 多机房）<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a><p class="mt-2.5 text-[11px] text-slate-400">含推广 / 联盟链接 · 不额外增加你的费用</p></div>
+<div class="not-prose my-6 flex gap-3 rounded-2xl border p-4 sm:p-5 bg-primary-50 border-primary-200"><svg class="w-5 h-5 mt-0.5 shrink-0 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><div class="min-w-0"><p class="font-bold mb-1 text-primary-800">延伸阅读</p><div class="text-sm leading-relaxed [&amp;_a]:font-semibold [&amp;_a:hover]:underline [&amp;_a]:underline-offset-2 [&amp;_a]:decoration-current/40 [&amp;_a:hover]:decoration-current text-primary-900/80 [&amp;_a]:text-primary-700"><ul>
+<li><a href="/blog/cloudcone-review">CloudCone 怎么样</a></li>
+<li><a href="/blog/cheap-us-vps-recommend">便宜美国 VPS 推荐 Top 榜</a></li>
+<li>要优质回国线路：<a href="/blog/vps-china-route-alternatives">VPS 回国线路差怎么办</a></li>
+</ul></div></div></div></div><!-- 作者简介：建立真实经验背书（E-E-A-T），内容集中在 config.ts 的 AUTHOR --><footer class="mt-14 flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">L</div><div><p class="font-bold text-slate-900">Leo</p><p class="mt-1 text-sm leading-relaxed text-slate-600">多年低价 VPS 重度用户，自掏腰包实测过 CloudCone、搬瓦工、RackNerd 等十余家美国主机。这里只写自己跑过分、踩过坑的真实体验，好的坏的都说。</p></div></footer></article></main><footer class="bg-white border-t border-slate-200 mt-24"><div class="shell py-14"><div class="flex flex-col gap-10 md:flex-row md:justify-between"><!-- 品牌 --><div class="max-w-sm"><a href="/" class="inline-flex items-center gap-2 text-base font-bold text-slate-900"><span class="grid place-items-center w-8 h-8 rounded-lg bg-primary-600 text-white text-sm font-black">C</span>CloudCone <span class="text-primary-600">指南</span></a><p class="mt-4 text-sm text-slate-500 leading-relaxed">CloudCone 历史套餐、优惠活动与真实替代评测，帮你告别信息差、避开高价车。</p></div><!-- 导航 --><nav class="grid grid-cols-2 gap-x-12 gap-y-3 text-sm sm:flex sm:gap-10"><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">浏览</span><a href="/" class="text-slate-600 hover:text-primary-600 transition-colors">首页</a><a href="/plans" class="text-slate-600 hover:text-primary-600 transition-colors">所有套餐</a></div><div class="flex flex-col gap-3"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">资料</span><a href="/events" class="text-slate-600 hover:text-primary-600 transition-colors">历史活动</a><a href="/blog" class="text-slate-600 hover:text-primary-600 transition-colors">博客</a><a href="/disclosure" class="text-slate-600 hover:text-primary-600 transition-colors">披露与免责</a></div></nav></div><!-- 广告与联盟披露 --><div class="mt-12 pt-8 border-t border-slate-200 flex items-start gap-2.5 text-xs text-slate-400 leading-relaxed"><svg class="w-4 h-4 shrink-0 mt-px text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg><p><span class="font-semibold text-slate-500">广告与联盟披露：</span>本站部分链接为推广 / 联盟链接（包含 CloudCone、RackNerd 等服务商）。当你通过这些链接完成购买时，我们可能获得一定比例的佣金；这不会增加你的任何费用，也不会影响我们评测内容的客观性。<a href="/disclosure" class="text-primary-600 hover:text-primary-700 font-medium whitespace-nowrap">查看完整披露 →</a></p></div><!-- 版权栏 --><div class="mt-6 flex flex-col gap-1.5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between"><p>&copy; 2026 CloudCone Guide · 非官方推荐与评测网站</p><p>所有评测基于真实体验，购买前请仔细阅读用户协议。</p></div></div></footer></body></html>
